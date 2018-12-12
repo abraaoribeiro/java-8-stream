@@ -1,10 +1,12 @@
-package abraao.stream.pa;
+package abraao.pa.stream;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
+
+import abraao.pa.Produto;
 
 
 public class StreamExemplo {
@@ -24,7 +26,6 @@ public class StreamExemplo {
 
 		
 		//Convertendo uma lista em em Set
-		
 		Set<Float> produtoPrecoList = produtosList.stream()
 				.filter((produto)-> produto.getPreco() < 30000)
 				.map((produto) -> produto.getPreco()).collect(Collectors.toSet());
@@ -60,13 +61,13 @@ public class StreamExemplo {
 	}
 	private static void filtroPorPreco() {
 
-		List<Float> produtoPrecoList = produtosList.stream().filter((produto) -> produto.getPreco() > 25000)
-				.map((produto) -> produto.getPreco()).collect(Collectors.toList());
+		List<Float> produtoPrecoList = produtosList.stream()
+				.filter((produto) -> produto.getPreco() > 25000)
+				.map((produto) -> produto.getPreco())
+				.collect(Collectors.toList());
 
 		produtoPrecoList.forEach((preco) -> System.out.println(preco));
 
 	}
-
-		
 
 }

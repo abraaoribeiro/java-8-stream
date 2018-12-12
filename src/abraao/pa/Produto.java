@@ -1,4 +1,4 @@
-package abraao.stream.pa;
+package abraao.pa;
 
 public class Produto {
 	
